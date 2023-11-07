@@ -1,6 +1,9 @@
 {
   "name": "sos-backend",
   "version": "1.0.0",
+  "engines": {
+    "node": "18.18.1"
+  },
   "description": "Amalitech hackathon project",
   "main": "index.js",
   "scripts": {
