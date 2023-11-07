@@ -10,13 +10,13 @@ const mongoose_1 = __importDefault(require("mongoose"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
-app.use(express_1.default.json);
+app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
 const port = process.env.PORT || 4000;
 const db = process.env.DB_URL;
 mongoose_1.default.connect(db, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
 }).then(() => {
     console.log('connected to MongoDB');
 });
