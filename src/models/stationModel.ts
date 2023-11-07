@@ -18,6 +18,9 @@ const stationSchema = new Schema({
     city:{
         type:String,
         required:true
+    },
+    device_token:{
+        type:String
     }
 },
 {

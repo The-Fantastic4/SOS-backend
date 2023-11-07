@@ -4,11 +4,11 @@ import mongoose from "mongoose"
 const {Schema, model} = mongoose
 
 const userSchema = new Schema({
-    firstname:{
+    firstName:{
         type:String,
         required:true
     },
-    lastname:{
+    lastName:{
         type:String,
         required:true
     },
