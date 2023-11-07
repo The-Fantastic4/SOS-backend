@@ -12,7 +12,7 @@ function convertLongitudinalAndLattitudinalCoordinatesToRadians(
   return coordinates;
 }
 
-function parseLocationsToRadiansConverter(
+export function convertCoordinatesToRadians(
   liveLocation: location,
   policeLocations: Array<location>
 ) {
@@ -35,18 +35,6 @@ function parseLocationsToRadiansConverter(
     liveLocation,
     policeLocations,
   };
-}
-
-function returnSmallestHarvisineDistance(
-  distances: Array<{ finalDistance: number; policeLocation: location }>
-) {
-  for (let i = 0; i < distances.length - 1; i++) {
-    if (distances[i].finalDistance > distances[i + 1].finalDistance) {
-      distances[i], (distances[i + 1] = distances[i + 1]), distances[i];
-    }
-  }
-
-  return distances[0];
 }
 
 function harvesineDistanceCalculator(
@@ -81,7 +69,19 @@ function harvesineDistanceCalculator(
   };
 }
 
-function getDistanceBetweenLiveLocationAndPoliceStation(locations: {
+function returnSmallestHarvisineDistance(
+  distances: Array<{ finalDistance: number; policeLocation: location }>
+) {
+  for (let i = 0; i < distances.length - 1; i++) {
+    if (distances[i].finalDistance > distances[i + 1].finalDistance) {
+      distances[i], (distances[i + 1] = distances[i + 1]), distances[i];
+    }
+  }
+
+  return distances[0];
+}
+
+export function getDistanceBetweenLiveLocationAndPoliceStation(locations: {
   liveLocation: location;
   policeLocations: Array<location>;
 }) {
