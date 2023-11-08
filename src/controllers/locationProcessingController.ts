@@ -45,6 +45,13 @@ export async function getClosestPoliceStationLocation(
       let result =
         getDistanceBetweenLiveLocationAndPoliceStation(convertedCoordinates);
 
+      // data to be sent to notification system
+      const notificationData = {
+        station_name: result["policeLocation"]["name_of_location"],
+        station_token: "",
+        liveLocation,
+      };
+
       return res.json({
         result,
       });
