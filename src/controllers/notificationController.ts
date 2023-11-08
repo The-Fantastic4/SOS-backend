@@ -2,7 +2,7 @@ import { userModel } from "../models/userModel"
 import { stationModel } from "../models/stationModel"
 import { Request,Response } from "express"
 import {messaging} from '../configs/fcmConfig'
-import * as admin from 'firebase-admin'
+import  admin from 'firebase-admin'
 
 
 //notifying user of sent alert

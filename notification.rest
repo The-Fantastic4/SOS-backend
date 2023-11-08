@@ -1,0 +1,9 @@
+@url = "http://localhost:5000"
+
+####
+
+POST http://localhost:5000/notifyPolice/Kwesimentim Police station/linda/0544078268/10.1/11.3 HTTP/1.1
+
+
+#####
+POST http://localhost:5000/notifyUser/0240123457
