@@ -44,9 +44,7 @@ function getClosestPoliceStationLocation(req, res) {
                     station_device_token: result["policeLocation"]["token"],
                     liveLocation,
                 };
-                return res.json({
-                    notificationData,
-                });
+                return notificationData;
             }
         }
         catch (error) {
