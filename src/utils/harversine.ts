@@ -58,7 +58,6 @@ function harversineDistanceCalculator(
     );
 
   const finalDistance = earthRadius * tempDistance;
-  console.log(finalDistance);
 
   return {
     finalDistance,

@@ -41,11 +41,11 @@ function getClosestPoliceStationLocation(req, res) {
                 // data to be sent to notification system
                 const notificationData = {
                     station_name: result["policeLocation"]["name_of_location"],
-                    station_token: "",
+                    station_device_token: result["policeLocation"]["token"],
                     liveLocation,
                 };
                 return res.json({
-                    result,
+                    notificationData,
                 });
             }
         }

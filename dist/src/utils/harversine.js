@@ -36,7 +36,6 @@ function harversineDistanceCalculator(liveLocation, policeLocation) {
     const tempDistance = 2 *
         Math.atan2(Math.sqrt(tempHarvesineFuncion), Math.sqrt(1 - tempHarvesineFuncion));
     const finalDistance = types_1.earthRadius * tempDistance;
-    console.log(finalDistance);
     return {
         finalDistance,
         policeLocation,

@@ -33,7 +33,7 @@ export async function getClosestPoliceStationLocation(
         let name_of_location = station.station_Name;
         let longitude = station.longitude;
         let lattitude = station.lattitude;
-        let token = station.device_token
+        let token = station.device_token;
 
         policeLocations.push({ name_of_location, longitude, lattitude, token });
       });
@@ -49,13 +49,11 @@ export async function getClosestPoliceStationLocation(
       // data to be sent to notification system
       const notificationData = {
         station_name: result["policeLocation"]["name_of_location"],
-        station_token: "",
+        station_device_token: result["policeLocation"]["token"],
         liveLocation,
       };
 
-      return res.json({
-        result,
-      });
+      return notificationData;
     }
   } catch (error) {
     return res
