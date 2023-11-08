@@ -33,10 +33,17 @@ function getClosestPoliceStationLocation(req, res) {
                     let name_of_location = station.station_Name;
                     let longitude = station.longitude;
                     let lattitude = station.lattitude;
-                    policeLocations.push({ name_of_location, longitude, lattitude });
+                    let token = station.device_token;
+                    policeLocations.push({ name_of_location, longitude, lattitude, token });
                 });
                 let convertedCoordinates = (0, harversine_1.convertCoordinatesToRadians)(liveLocation, policeLocations);
                 let result = (0, harversine_1.getDistanceBetweenLiveLocationAndPoliceStation)(convertedCoordinates);
+                // data to be sent to notification system
+                const notificationData = {
+                    station_name: result["policeLocation"]["name_of_location"],
+                    station_token: "",
+                    liveLocation,
+                };
                 return res.json({
                     result,
                 });

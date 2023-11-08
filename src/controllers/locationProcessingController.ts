@@ -33,8 +33,9 @@ export async function getClosestPoliceStationLocation(
         let name_of_location = station.station_Name;
         let longitude = station.longitude;
         let lattitude = station.lattitude;
+        let token = station.device_token
 
-        policeLocations.push({ name_of_location, longitude, lattitude });
+        policeLocations.push({ name_of_location, longitude, lattitude, token });
       });
 
       let convertedCoordinates = convertCoordinatesToRadians(

@@ -4,4 +4,5 @@ export type location = {
     name_of_location: string;
     longitude: number;
     lattitude: number;
+    token?: string | null | undefined;
 };
