@@ -4,41 +4,54 @@ import { location } from "../utils/types";
 import {
   convertCoordinatesToRadians,
   getDistanceBetweenLiveLocationAndPoliceStation,
-} from "../utils/harvesine";
+} from "../utils/harversine";
 
 export async function getClosestPoliceStationLocation(
   req: Request,
   res: Response
 ) {
-  const { city } = req.query;
-  const { long, latt } = req.params;
+  const { city, name_of_location, long, latt } = req.body;
 
   let longitude = parseFloat(long);
   let lattitude = parseFloat(latt);
 
   let liveLocation: location = {
+    name_of_location,
     longitude,
     lattitude,
   };
 
   const stations = await stationModel.find({ city });
-  let ott = stations.map((obj) => [obj.latitude, obj.longitude]);
 
-  if (stations.length > 0) {
-    let policeLocations: Array<location> = [];
+  try {
+    if (!stations) {
+      return res.json({ error: "No police stations found in the given city." });
+    } else {
+      let policeLocations: Array<location> = [];
 
-    stations.forEach((station) => {
-      let longitude = station.longitude;
-      let lattitude = station.latitude;
+      stations.forEach((station) => {
+        let name_of_location = station.station_Name;
+        let longitude = station.longitude;
+        let lattitude = station.lattitude;
 
-      policeLocations.push({ longitude, lattitude });
+        policeLocations.push({ name_of_location, longitude, lattitude });
+      });
 
       let convertedCoordinates = convertCoordinatesToRadians(
         liveLocation,
         policeLocations
       );
+
       let result =
         getDistanceBetweenLiveLocationAndPoliceStation(convertedCoordinates);
-    });
+
+      return res.json({
+        result,
+      });
+    }
+  } catch (error) {
+    return res
+      .status(500)
+      .json({ error: "An error occurred while processing your request." });
   }
 }

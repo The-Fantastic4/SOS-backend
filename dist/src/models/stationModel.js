@@ -15,7 +15,7 @@ const stationSchema = new Schema({
         type: Number,
         required: true
     },
-    latitude: {
+    lattitude: {
         type: Number,
         required: true
     },

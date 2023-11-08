@@ -4,6 +4,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
+const locationProcessingController_1 = require("../controllers/locationProcessingController");
 const router = express_1.default.Router();
-router.post("/location");
+router.post('/location', locationProcessingController_1.getClosestPoliceStationLocation);
+exports.default = router;
 //# sourceMappingURL=locationProcessingRoute.js.map

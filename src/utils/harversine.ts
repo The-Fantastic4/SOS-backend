@@ -1,8 +1,6 @@
 import { location, pi, earthRadius } from "./types";
 
-function convertLongitudinalAndLattitudinalCoordinatesToRadians(
-  coordinates: location
-) {
+function convertDegreesToRadians(coordinates: location) {
   const longitudeRadians: number = coordinates.longitude * (pi / 180);
   const lattitudeRadians: number = coordinates.lattitude * (pi / 180);
 
@@ -16,17 +14,14 @@ export function convertCoordinatesToRadians(
   liveLocation: location,
   policeLocations: Array<location>
 ) {
-  let liveLocationRadians: location =
-    convertLongitudinalAndLattitudinalCoordinatesToRadians(liveLocation);
+  let liveLocationRadians: location = convertDegreesToRadians(liveLocation);
 
   liveLocation = liveLocationRadians;
 
   let newPoliceLocations: Array<location> = [];
 
   for (let local of policeLocations) {
-    newPoliceLocations.push(
-      convertLongitudinalAndLattitudinalCoordinatesToRadians(local)
-    );
+    newPoliceLocations.push(convertDegreesToRadians(local));
   }
 
   policeLocations = newPoliceLocations;
@@ -37,7 +32,8 @@ export function convertCoordinatesToRadians(
   };
 }
 
-function harvesineDistanceCalculator(
+// calculates the distance between the user's location and police station
+function harversineDistanceCalculator(
   liveLocation: location,
   policeLocation: location
 ) {
@@ -62,6 +58,7 @@ function harvesineDistanceCalculator(
     );
 
   const finalDistance = earthRadius * tempDistance;
+  console.log(finalDistance);
 
   return {
     finalDistance,
@@ -94,7 +91,7 @@ export function getDistanceBetweenLiveLocationAndPoliceStation(locations: {
   }> = [];
 
   for (let local of policeLocations) {
-    let result = harvesineDistanceCalculator(liveLocation, local);
+    let result = harversineDistanceCalculator(liveLocation, local);
     harvesineDistances.push(result);
   }
 

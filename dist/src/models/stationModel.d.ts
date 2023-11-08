@@ -3,28 +3,28 @@ export declare const stationModel: mongoose.Model<{
     createdAt: NativeDate;
     updatedAt: NativeDate;
 } & {
+    city: string;
     station_Name: string;
     longitude: number;
-    latitude: number;
-    city: string;
+    lattitude: number;
     device_token?: string | null | undefined;
 }, {}, {}, {}, mongoose.Document<unknown, {}, {
     createdAt: NativeDate;
     updatedAt: NativeDate;
 } & {
+    city: string;
     station_Name: string;
     longitude: number;
-    latitude: number;
-    city: string;
+    lattitude: number;
     device_token?: string | null | undefined;
 }> & {
     createdAt: NativeDate;
     updatedAt: NativeDate;
 } & {
+    city: string;
     station_Name: string;
     longitude: number;
-    latitude: number;
-    city: string;
+    lattitude: number;
     device_token?: string | null | undefined;
 } & {
     _id: mongoose.Types.ObjectId;
@@ -34,28 +34,28 @@ export declare const stationModel: mongoose.Model<{
     createdAt: NativeDate;
     updatedAt: NativeDate;
 } & {
+    city: string;
     station_Name: string;
     longitude: number;
-    latitude: number;
-    city: string;
+    lattitude: number;
     device_token?: string | null | undefined;
 }, mongoose.Document<unknown, {}, mongoose.FlatRecord<{
     createdAt: NativeDate;
     updatedAt: NativeDate;
 } & {
+    city: string;
     station_Name: string;
     longitude: number;
-    latitude: number;
-    city: string;
+    lattitude: number;
     device_token?: string | null | undefined;
 }>> & mongoose.FlatRecord<{
     createdAt: NativeDate;
     updatedAt: NativeDate;
 } & {
+    city: string;
     station_Name: string;
     longitude: number;
-    latitude: number;
-    city: string;
+    lattitude: number;
     device_token?: string | null | undefined;
 }> & {
     _id: mongoose.Types.ObjectId;
