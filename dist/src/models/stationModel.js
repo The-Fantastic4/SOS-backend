@@ -15,7 +15,11 @@ const stationSchema = new Schema({
         type: Number,
         required: true
     },
+<<<<<<< HEAD
     lattitude: {
+=======
+    latitude: {
+>>>>>>> 80e0dfe3397c948f1569c77ec25d72b71583308f
         type: Number,
         required: true
     },

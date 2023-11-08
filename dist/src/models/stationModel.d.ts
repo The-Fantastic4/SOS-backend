@@ -6,7 +6,12 @@ export declare const stationModel: mongoose.Model<{
     city: string;
     station_Name: string;
     longitude: number;
+<<<<<<< HEAD
     lattitude: number;
+=======
+    latitude: number;
+    city: string;
+>>>>>>> 80e0dfe3397c948f1569c77ec25d72b71583308f
     device_token?: string | null | undefined;
 }, {}, {}, {}, mongoose.Document<unknown, {}, {
     createdAt: NativeDate;
@@ -15,7 +20,12 @@ export declare const stationModel: mongoose.Model<{
     city: string;
     station_Name: string;
     longitude: number;
+<<<<<<< HEAD
     lattitude: number;
+=======
+    latitude: number;
+    city: string;
+>>>>>>> 80e0dfe3397c948f1569c77ec25d72b71583308f
     device_token?: string | null | undefined;
 }> & {
     createdAt: NativeDate;
@@ -24,7 +34,12 @@ export declare const stationModel: mongoose.Model<{
     city: string;
     station_Name: string;
     longitude: number;
+<<<<<<< HEAD
     lattitude: number;
+=======
+    latitude: number;
+    city: string;
+>>>>>>> 80e0dfe3397c948f1569c77ec25d72b71583308f
     device_token?: string | null | undefined;
 } & {
     _id: mongoose.Types.ObjectId;
@@ -37,7 +52,12 @@ export declare const stationModel: mongoose.Model<{
     city: string;
     station_Name: string;
     longitude: number;
+<<<<<<< HEAD
     lattitude: number;
+=======
+    latitude: number;
+    city: string;
+>>>>>>> 80e0dfe3397c948f1569c77ec25d72b71583308f
     device_token?: string | null | undefined;
 }, mongoose.Document<unknown, {}, mongoose.FlatRecord<{
     createdAt: NativeDate;
@@ -46,7 +66,12 @@ export declare const stationModel: mongoose.Model<{
     city: string;
     station_Name: string;
     longitude: number;
+<<<<<<< HEAD
     lattitude: number;
+=======
+    latitude: number;
+    city: string;
+>>>>>>> 80e0dfe3397c948f1569c77ec25d72b71583308f
     device_token?: string | null | undefined;
 }>> & mongoose.FlatRecord<{
     createdAt: NativeDate;
@@ -55,7 +80,12 @@ export declare const stationModel: mongoose.Model<{
     city: string;
     station_Name: string;
     longitude: number;
+<<<<<<< HEAD
     lattitude: number;
+=======
+    latitude: number;
+    city: string;
+>>>>>>> 80e0dfe3397c948f1569c77ec25d72b71583308f
     device_token?: string | null | undefined;
 }> & {
     _id: mongoose.Types.ObjectId;

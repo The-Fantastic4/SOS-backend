@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 {"version":3,"file":"registrationRoute.js","sourceRoot":"","sources":["../../../src/routes/registrationRoute.ts"],"names":[],"mappings":";;;;;AAAA,sDAA8B;AAC9B,MAAM,MAAM,GAAG,iBAAO,CAAC,MAAM,EAAE,CAAC;AAEhC,kFAAiE;AACjE,8FAAyG;AAEzG,MAAM;KACH,IAAI,CAAC,WAAW,EAAE,iCAAQ,CAAC;KAC3B,IAAI,CAAC,0BAA0B,EAAE,oDAAqB,CAAC;KACvD,GAAG,CAAC,0CAA0C,EAAE,kDAAmB,CAAC,CAAC;AAExE,kBAAe,MAAM,CAAC"}
+=======
+{"version":3,"file":"registrationRoute.js","sourceRoot":"","sources":["../../../src/routes/registrationRoute.ts"],"names":[],"mappings":";;;;;AAAA,sDAA6B;AAC7B,MAAM,MAAM,GAAG,iBAAO,CAAC,MAAM,EAAE,CAAA;AAE/B,kFAAgF;AAEhF,MAAM,CAAC,IAAI,CAAC,WAAW,EAAC,iCAAQ,CAAC;KAChC,GAAG,CAAC,gCAAgC,EAAC,uCAAc,CAAC,CAAA;AAErD,kBAAe,MAAM,CAAA"}
+>>>>>>> 80e0dfe3397c948f1569c77ec25d72b71583308f
