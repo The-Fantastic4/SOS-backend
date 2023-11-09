@@ -43,8 +43,8 @@ export async function notifyUser(req:Request, res:Response){
 //notifying police of incoming alert
 export async function notifyPolice(req:Request, res:Response){
     try {
-        const {station_Name,firstName,phone_number, latt,long} = req.params
-        var station = await stationModel.findOne({station_Name})
+        const {id,firstName,phone_number, latt,long} = req.params
+        var station = await stationModel.findOne({_id:id})
         const token = station?.device_token as string
         const name = station?.station_Name as string
         let latitude = latt
