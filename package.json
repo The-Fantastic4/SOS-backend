@@ -9,7 +9,7 @@
   "scripts": {
     "build": "tsc",
     "clean": "rm -rf ./dist",
-    "start": " npm run build && node ./dist/src",
+    "start": " npm run clean && npm run build && node ./dist/src",
     "dev": "npm run build && nodemon ./dist/src"
   },
   "repository": {
