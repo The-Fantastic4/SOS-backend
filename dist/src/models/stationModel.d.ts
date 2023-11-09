@@ -5,7 +5,7 @@ export declare const stationModel: mongoose.Model<{
 } & {
     station_Name: string;
     longitude: number;
-    latitude: string;
+    lattitude: number;
     city: string;
     device_token?: string | null | undefined;
 }, {}, {}, {}, mongoose.Document<unknown, {}, {
@@ -14,7 +14,7 @@ export declare const stationModel: mongoose.Model<{
 } & {
     station_Name: string;
     longitude: number;
-    latitude: string;
+    lattitude: number;
     city: string;
     device_token?: string | null | undefined;
 }> & {
@@ -23,7 +23,7 @@ export declare const stationModel: mongoose.Model<{
 } & {
     station_Name: string;
     longitude: number;
-    latitude: string;
+    lattitude: number;
     city: string;
     device_token?: string | null | undefined;
 } & {
@@ -36,7 +36,7 @@ export declare const stationModel: mongoose.Model<{
 } & {
     station_Name: string;
     longitude: number;
-    latitude: string;
+    lattitude: number;
     city: string;
     device_token?: string | null | undefined;
 }, mongoose.Document<unknown, {}, mongoose.FlatRecord<{
@@ -45,7 +45,7 @@ export declare const stationModel: mongoose.Model<{
 } & {
     station_Name: string;
     longitude: number;
-    latitude: string;
+    lattitude: number;
     city: string;
     device_token?: string | null | undefined;
 }>> & mongoose.FlatRecord<{
@@ -54,7 +54,7 @@ export declare const stationModel: mongoose.Model<{
 } & {
     station_Name: string;
     longitude: number;
-    latitude: string;
+    lattitude: number;
     city: string;
     device_token?: string | null | undefined;
 }> & {

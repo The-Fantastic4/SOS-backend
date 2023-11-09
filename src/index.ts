@@ -3,6 +3,8 @@ import cors from "cors"
 import dotenv from "dotenv"
 import mongoose, { ConnectOptions } from "mongoose"
 import reg from "./routes/registrationRoute"
+import locationProcess from "./routes/locationProcessingRoute";
+import notification from "./routes/notificationRoute"
 
 dotenv.config()
 
@@ -12,6 +14,8 @@ app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(reg)
+app.use(locationProcess)
+app.use(notification)
 
 
 const port = process.env.PORT || 4000

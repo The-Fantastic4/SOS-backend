@@ -9,3 +9,6 @@ Content-Type: application/json
     "lastName":"Boateng",
     "phone_number":"0240123457"
 }
+
+#####
+PUT http://localhost:5000/updateToken/654a1c06e75581fdf9bd29cc/cV93ny66RNW82h_UFjo6IL:APA91bGUFY-Qf5eOzsgTl33NpFU0Fp8JMb6APtOUbOdNfhJqmD4xi-dJv7XzG0XNjVAhUsa6n98ojaWYiIQvS5m6neZ1LwocICy2PBIpME8Un0_O1eMotRGTpPNaKtcvDN9CABsi6oQ1 HTTP/1.1

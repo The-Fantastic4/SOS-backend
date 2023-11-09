@@ -9,8 +9,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.register = void 0;
+exports.addDeviceToken = exports.register = void 0;
 const userModel_1 = require("../models/userModel");
+//registering user
 function register(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
@@ -26,15 +27,31 @@ function register(req, res) {
                     user
                 });
             }
-            return res.status(401).json({
+            return res.status(400).json({
                 message: "registration failed"
             });
         }
         catch (error) {
-            console.log(error);
             return res.status(500).send("Internal sever error");
         }
     });
 }
 exports.register = register;
+//updating user info with device token
+function addDeviceToken(req, res) {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            const { id, device_token } = req.params;
+            const user = yield userModel_1.userModel.findByIdAndUpdate({ _id: id }, { device_token });
+            if (user) {
+                return res.status(200).json({ message: "user updated" });
+            }
+            return res.status(400).json({ message: "failed to update" });
+        }
+        catch (error) {
+            return res.status(500).send("Internal server error");
+        }
+    });
+}
+exports.addDeviceToken = addDeviceToken;
 //# sourceMappingURL=registrationController.js.map
