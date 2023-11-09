@@ -43,11 +43,12 @@ export async function notifyUser(req:Request, res:Response){
 //notifying police of incoming alert
 export async function notifyPolice(req:Request, res:Response){
     try {
-        const {station_Name,firstName,phone_number, lat,lon} = req.params
+        const {station_Name,firstName,phone_number, latt,long} = req.params
         var station = await stationModel.findOne({station_Name})
         const token = station?.device_token as string
         const name = station?.station_Name as string
-        let cordinates = `${lat}`+` - `+`${lon}`
+        let latitude = latt
+        let longitude = long
         const message:admin.messaging.Message = {
             token: token,
             android:{
@@ -56,7 +57,8 @@ export async function notifyPolice(req:Request, res:Response){
                     body:"A precious citizen needs your help!\n Use the below information to help."
                 },
                 data: {
-                    location: `${cordinates}`,
+                    latitude: latitude,
+                    longitude:longitude,
                     username: `${firstName}`,
                     phone_number: `${phone_number}`,
                   },
