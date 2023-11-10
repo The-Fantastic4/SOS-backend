@@ -12,3 +12,27 @@ Content-Type: application/json
 
 #####
 PUT http://localhost:5000/updateToken/654a1c06e75581fdf9bd29cc/cV93ny66RNW82h_UFjo6IL:APA91bGUFY-Qf5eOzsgTl33NpFU0Fp8JMb6APtOUbOdNfhJqmD4xi-dJv7XzG0XNjVAhUsa6n98ojaWYiIQvS5m6neZ1LwocICy2PBIpME8Un0_O1eMotRGTpPNaKtcvDN9CABsi6oQ1 HTTP/1.1
+
+
+#####
+POST https://sos-service.onrender.com/register_police_station
+Content-Type: application/json
+
+{
+    "station_Name":"ttu police",
+    "longitude":"-1.755938",
+    "lattitude":"4.90973",
+    "city":"Takoradi"
+}
+
+
+#####
+POST http://localhost:5000/register_police_station HTTP/1.1
+Content-Type: application/json
+
+{
+    "station_Name":"ttu police",
+    "longitude":"-1.755938",
+    "lattitude":"4.90973",
+    "city":"Takoradi"
+}

@@ -11,12 +11,12 @@ export async function registerPoliceStation(req: Request, res: Response) {
   });
 
   if (station) {
-    return res.json({
+    return res.status(200).json({
       message: "Registration successful",
       station,
     });
   } else {
-    return res.json({
+    return res.status(200).json({
       message: "Registration failed",
     });
   }
@@ -32,11 +32,11 @@ export async function updatePoliceStation(req: Request, res: Response) {
     );
 
     if (station) {
-      return res.json({
+      return res.status(200).json({
         message: `Updated successfully`,
       });
     } else {
-      return res.status(404).json({ error: "Resource not found" });
+      return res.status(401).json({ error: "Resource not found" });
     }
   } catch (error) {
     return res
