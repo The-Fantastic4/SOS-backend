@@ -53,6 +53,8 @@ export async function getClosestPoliceStationLocation(
         liveLocation,
       };
 
+      returnStatusResponse(res);
+      
       return notificationData;
     }
   } catch (error) {
@@ -60,4 +62,8 @@ export async function getClosestPoliceStationLocation(
       .status(500)
       .json({ error: "An error occurred while processing your request." });
   }
+}
+
+async function returnStatusResponse(res: Response) {
+  return res.status(200).send();
 }
