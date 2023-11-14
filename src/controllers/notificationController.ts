@@ -26,15 +26,12 @@ export async function notifyUser(req:Request, res:Response){
 
         messaging.send(message,false)
         .then((response:string) => {
-            console.log('Notification sent:', response)
             return res.status(200).json({ message: 'Notification Sent' });
           })
           .catch((error:string) => {
-            console.error('Failed to send notification:', error)
             return res.status(400).json({ message: 'Failed to send notification' })
           })
         } catch (error) {
-          console.error(error)
           res.status(500).send('Internal Server Error')
         }
 }
@@ -69,15 +66,12 @@ export async function notifyPolice(req:Request, res:Response){
 
         messaging.send(message,false)
         .then((response:string) => {
-            console.log('Notification sent:', response)
             return res.status(200).json({ message: 'Notification Sent' })
           })
           .catch((error:string) => {
-            console.error('Failed to send notification:', error)
             return res.status(400).json({ message: 'Failed to send notification' })
           })
         } catch (error) {
-          console.error(error)
           res.status(500).send('Internal Server Error');
         }
 }
