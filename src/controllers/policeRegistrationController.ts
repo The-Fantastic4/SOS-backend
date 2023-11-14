@@ -16,7 +16,7 @@ export async function registerPoliceStation(req: Request, res: Response) {
       station,
     });
   } else {
-    return res.status(401).json({
+    return res.status(400).json({
       message: "Registration failed",
     });
   }
@@ -36,7 +36,7 @@ export async function updatePoliceStation(req: Request, res: Response) {
         message: `Updated successfully`,
       });
     } else {
-      return res.status(401).json({ error: "Resource not found" });
+      return res.status(401).json({ error: "User not found" });
     }
   } catch (error) {
     return res
