@@ -21,13 +21,13 @@ function registerPoliceStation(req, res) {
             city,
         });
         if (station) {
-            return res.json({
+            return res.status(200).json({
                 message: "Registration successful",
                 station,
             });
         }
         else {
-            return res.json({
+            return res.status(200).json({
                 message: "Registration failed",
             });
         }
@@ -40,12 +40,12 @@ function updatePoliceStation(req, res) {
         try {
             const station = yield stationModel_1.stationModel.findByIdAndUpdate({ _id: id }, { device_token });
             if (station) {
-                return res.json({
+                return res.status(200).json({
                     message: `Updated successfully`,
                 });
             }
             else {
-                return res.status(404).json({ error: "Resource not found" });
+                return res.status(401).json({ error: "Resource not found" });
             }
         }
         catch (error) {

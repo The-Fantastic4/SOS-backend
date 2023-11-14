@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getDistanceBetweenLiveLocationAndPoliceStation = exports.convertCoordinatesToRadians = void 0;
+exports.getSmallestDistanceBetweenLiveLocationAndPoliceStation = exports.convertCoordinatesToRadians = void 0;
 const types_1 = require("./types");
 function convertDegreesToRadians(coordinates) {
     const longitudeRadians = coordinates.longitude * (types_1.pi / 180);
@@ -49,7 +49,7 @@ function returnSmallestHarvisineDistance(distances) {
     }
     return distances[0];
 }
-function getDistanceBetweenLiveLocationAndPoliceStation(locations) {
+function getSmallestDistanceBetweenLiveLocationAndPoliceStation(locations) {
     const liveLocation = locations.liveLocation;
     const policeLocations = locations.policeLocations;
     let harvesineDistances = [];
@@ -59,5 +59,5 @@ function getDistanceBetweenLiveLocationAndPoliceStation(locations) {
     }
     return returnSmallestHarvisineDistance(harvesineDistances);
 }
-exports.getDistanceBetweenLiveLocationAndPoliceStation = getDistanceBetweenLiveLocationAndPoliceStation;
+exports.getSmallestDistanceBetweenLiveLocationAndPoliceStation = getSmallestDistanceBetweenLiveLocationAndPoliceStation;
 //# sourceMappingURL=harversine.js.map

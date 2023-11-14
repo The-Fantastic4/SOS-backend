@@ -3,7 +3,7 @@ import { stationModel } from "../models/stationModel";
 import { location } from "../utils/types";
 import {
   convertCoordinatesToRadians,
-  getDistanceBetweenLiveLocationAndPoliceStation,
+  getSmallestDistanceBetweenLiveLocationAndPoliceStation,
 } from "../utils/harversine";
 
 export async function getClosestPoliceStationLocation(
@@ -44,7 +44,7 @@ export async function getClosestPoliceStationLocation(
       );
 
       let result =
-        getDistanceBetweenLiveLocationAndPoliceStation(convertedCoordinates);
+        getSmallestDistanceBetweenLiveLocationAndPoliceStation(convertedCoordinates);
 
       // data to be sent to notification system
       const notificationData = {

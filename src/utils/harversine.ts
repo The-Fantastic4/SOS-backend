@@ -77,7 +77,7 @@ function returnSmallestHarvisineDistance(
   return distances[0];
 }
 
-export function getDistanceBetweenLiveLocationAndPoliceStation(locations: {
+export function getSmallestDistanceBetweenLiveLocationAndPoliceStation(locations: {
   liveLocation: location;
   policeLocations: Array<location>;
 }) {

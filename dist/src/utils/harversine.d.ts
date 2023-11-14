@@ -3,7 +3,7 @@ export declare function convertCoordinatesToRadians(liveLocation: location, poli
     liveLocation: location;
     policeLocations: location[];
 };
-export declare function getDistanceBetweenLiveLocationAndPoliceStation(locations: {
+export declare function getSmallestDistanceBetweenLiveLocationAndPoliceStation(locations: {
     liveLocation: location;
     policeLocations: Array<location>;
 }): {

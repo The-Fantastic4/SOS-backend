@@ -52,11 +52,13 @@ exports.notifyUser = notifyUser;
 function notifyPolice(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const { station_Name, firstName, phone_number, lat, lon } = req.params;
-            var station = yield stationModel_1.stationModel.findOne({ station_Name });
+            const { id } = req.query;
+            const { firstName, phone_number, latt, long } = req.params;
+            var station = yield stationModel_1.stationModel.findOne({ _id: id });
             const token = station === null || station === void 0 ? void 0 : station.device_token;
             const name = station === null || station === void 0 ? void 0 : station.station_Name;
-            let cordinates = `${lat}` + ` - ` + `${lon}`;
+            let latitude = latt;
+            let longitude = long;
             const message = {
                 token: token,
                 android: {
@@ -65,7 +67,8 @@ function notifyPolice(req, res) {
                         body: "A precious citizen needs your help!\n Use the below information to help."
                     },
                     data: {
-                        location: `${cordinates}`,
+                        latitude: latitude,
+                        longitude: longitude,
                         username: `${firstName}`,
                         phone_number: `${phone_number}`,
                     },

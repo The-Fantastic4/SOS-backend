@@ -37,13 +37,14 @@ function getClosestPoliceStationLocation(req, res) {
                     policeLocations.push({ name_of_location, longitude, lattitude, token });
                 });
                 let convertedCoordinates = (0, harversine_1.convertCoordinatesToRadians)(liveLocation, policeLocations);
-                let result = (0, harversine_1.getDistanceBetweenLiveLocationAndPoliceStation)(convertedCoordinates);
+                let result = (0, harversine_1.getSmallestDistanceBetweenLiveLocationAndPoliceStation)(convertedCoordinates);
                 // data to be sent to notification system
                 const notificationData = {
                     station_name: result["policeLocation"]["name_of_location"],
                     station_device_token: result["policeLocation"]["token"],
                     liveLocation,
                 };
+                returnStatusResponse(res);
                 return notificationData;
             }
         }
@@ -55,4 +56,9 @@ function getClosestPoliceStationLocation(req, res) {
     });
 }
 exports.getClosestPoliceStationLocation = getClosestPoliceStationLocation;
+function returnStatusResponse(res) {
+    return __awaiter(this, void 0, void 0, function* () {
+        return res.status(200).send();
+    });
+}
 //# sourceMappingURL=locationProcessingController.js.map
