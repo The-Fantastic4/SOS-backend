@@ -3,6 +3,19 @@ import { stationModel } from "../models/stationModel";
 
 export async function registerPoliceStation(req: Request, res: Response) {
   const { station_Name, longitude, lattitude, city } = req.body;
+  if (!station_Name || !longitude || !lattitude || !city) {
+    return res.status(400).json({
+        message: 'Please include all fields'
+    })
+}
+// Find if user already exists
+const userExists = await stationModel.findOne({ station_Name })
+
+if (userExists) {
+    return res.status(400).json({
+        message: 'Account already exists'
+    })
+}
   const station = await stationModel.create({
     station_Name,
     longitude,

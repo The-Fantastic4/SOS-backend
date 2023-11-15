@@ -6,6 +6,19 @@ import { userModel } from "../models/userModel"
 export async function register(req:Request,res:Response) {
     try {
         const {firstName,lastName,phone_number} = req.body
+        if (!firstName || !lastName || phone_number) {
+            return res.status(400).json({
+                message: 'Please include all fields'
+            })
+        }
+        // Find if user already exists
+        const userExists = await userModel.findOne({ phone_number })
+
+        if (userExists) {
+            return res.status(400).json({
+                message: 'Account already exists'
+            })
+        }
         const user = await userModel.create({
             firstName,
             lastName,
